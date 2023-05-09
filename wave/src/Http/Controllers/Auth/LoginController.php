@@ -9,22 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
     use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
-     *
+     * https://MorganLevetti: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@github.com/MorganLevetti/erp-laravel-react.git
      * @var string
      */
     protected $redirectTo = '/dashboard';
@@ -46,12 +35,12 @@ class LoginController extends Controller
 
         return 'email';
     }
-
+    // Vue du Formulaire
     public function showLoginForm()
     {
         return view('theme::auth.login');
     }
-
+    // Vérification email
     protected function authenticated(Request $request, $user)
     {
         if(setting('auth.verify_email') && !$user->verified){

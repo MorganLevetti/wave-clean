@@ -71,7 +71,6 @@ class AuthController extends Controller
         } else {
             abort('401', 'Unauthorized');
         }
-
     }
 
     /**
